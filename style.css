@@ -1,0 +1,924 @@
+/* =========================================
+   БАЗОВІ НАЛАШТУВАННЯ ТА ФОН СТОРІНКИ 
+   (Виконання вимоги Завдання 2: фон колір + картинка)
+   ========================================= */
+body {
+    /* Шрифт сторінки */
+    font-family: Arial, sans-serif;
+    
+    /* Колір фону сторінки (світло-сірий) */
+    background-color: #f4f6f9; 
+    
+    /* Фонова картинка сторінки (напівпрозорий паттерн) */
+    background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+    
+    /* Основний колір тексту */
+    color: #333333; 
+    
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* =========================================
+   БАЗОВИЙ КОНТЕЙНЕР (для всіх сторінок)
+   ========================================= */
+main {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* =========================================
+   ГОЛОВНА СТОРІНКА (lab1.html) - GRID ТА БЕМ
+   ========================================= */
+.main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: 
+        "hero hero"
+        "features promo"
+        "map map";
+    gap: 20px;
+}
+
+/* --- РОЗМІЩЕННЯ В СІТЦІ --- */
+.main__hero { 
+    grid-area: hero; 
+    text-align: center;
+}
+
+.main__features { 
+    grid-area: features; 
+}
+
+.main__promo { 
+    grid-area: promo; 
+}
+
+.main__map { 
+    grid-area: map; 
+}
+
+/* --- СТИЛІ ЕЛЕМЕНТІВ (Картинка, Карта) --- */
+
+/* Налаштування картинки */
+.hero__image {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+/* Налаштування карти (додали жорстку висоту, щоб вона з'явилась) */
+.map__iframe {
+    width: 100%;
+    height: 350px; /* Висота карти */
+    border: none;
+    border-radius: 8px;
+    background-color: #eaeaea; /* Світло-сірий фон, поки карта вантажиться */
+}
+
+/* =========================================
+   ЗАГОЛОВКИ H1..H6 (Виконання вимоги Завдання 2)
+   ========================================= */
+h1 { color: #ffffff; font-size: 2.5em; }
+h2 { color: #2c3e50; border-bottom: 2px solid #e74c3c; padding-bottom: 5px; }
+h3 { color: #2980b9; }
+h4 { color: #8e44ad; }
+h5 { color: #d35400; }
+h6 { color: #7f8c8d; font-style: italic; }
+
+/* =========================================
+   КОЛЬОРИ ТЕКСТУ ТА ФОНУ ТЕКСТУ (Завдання 2)
+   ========================================= */
+.highlight-box {
+    color: white; /* Колір тексту */
+    background-color: #e74c3c; /* Колір фону тексту */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+mark {
+    background-color: #f1c40f;
+    color: black;
+    font-weight: bold;
+}
+
+/* =========================================
+   БЛОК: HEADER (ШАПКА) ТА NAV (НАВІГАЦІЯ) - БЕМ
+   ========================================= */
+.header {
+    background-color: #2c3e50;
+    text-align: center;
+    padding: 20px;
+}
+
+.header__title {
+    color: #ffffff;
+    font-size: 2.5em;
+    margin-top: 0;
+}
+
+.nav__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #2c3e50;
+}
+
+.nav__item {
+    position: relative; 
+}
+
+.nav__link {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    font-weight: bold;
+}
+
+.nav__link:hover {
+    background-color: #e74c3c;
+}
+
+/* Випадаюче меню за БЕМ */
+.nav__dropdown {
+    display: none; 
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #34495e;
+    min-width: 200px;
+    z-index: 999; 
+    flex-direction: column;
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+
+/* Модифікатор: коли наводимо на пункт з дропдауном - показуємо його */
+.nav__item--dropdown:hover .nav__dropdown {
+    display: flex; 
+}
+
+.nav__dropdown-item {
+    border-bottom: 1px solid #2c3e50;
+}
+
+.nav__dropdown-item .nav__link {
+    padding: 10px 20px;
+    font-weight: normal;
+}
+
+/* =========================================
+   КАРТИНКИ, СПИСКИ ТА ТАБЛИЦІ (Завдання 2)
+   ========================================= */
+img {
+    max-width: 100%;
+    border: 3px solid #bdc3c7; /* Рамка для картинки */
+    border-radius: 5px;
+}
+
+ul, ol {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+/* =========================================
+   ПІДВАЛ (Footer) (Завдання 2)
+   ========================================= */
+footer {
+    background-color: #2c3e50;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+/* =========================================
+   СТОРІНКА КОНТАКТІВ (contact.html) - БЕМ
+   ========================================= */
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центруємо форму по горизонталі */
+    text-align: center;
+}
+
+.contact__title {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.contact__text {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* Блок форми */
+.contact-form {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    text-align: left; /* Текст підписів по лівому краю */
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Легка тінь форми */
+}
+
+/* Елементи форми (label, input, button) */
+.contact-form__label {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.contact-form__input {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+/* Ефект, коли користувач натискає на поле вводу */
+.contact-form__input:focus {
+    border-color: #e74c3c;
+    outline: none; /* Прибираємо стандартну чорну рамку браузера */
+}
+
+/* Стилізація кнопки */
+.contact-form__submit {
+    margin-top: 25px;
+    padding: 12px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+/* Анімація кнопки при наведенні та натисканні */
+.contact-form__submit:hover {
+    background-color: #c0392b;
+}
+
+.contact-form__submit:active {
+    transform: scale(0.98); /* Легке зменшення кнопки при кліку */
+}
+
+/* =========================================
+   ЗАВДАННЯ 10: ГРАДІЄНТИ, ТІНІ, ПРОЗОРІСТЬ
+   ========================================= */
+
+/* 1. ГРАДІЄНТ ТА ТІНЬ ДЛЯ ТЕКСТУ (Максимально чітка тінь) */
+.gradient-text {
+    background: linear-gradient(45deg, #c0392b, #f39c12);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.8em; 
+    text-align: center;
+    margin-bottom: 15px;
+    
+    /* РОБИМО ТІНЬ МАКСИМАЛЬНО ВИДИМОЮ */
+    /* Значення по черзі: 
+       4px - зсув вправо
+       4px - зсув вниз
+       2px - розмиття (зробили меншим, щоб тінь була різкою)
+       rgba(0,0,0, 0.8) - колір чорний, непрозорість аж 80% */
+    filter: drop-shadow(4px 4px 2px rgba(0, 0, 0, 0.8)); 
+}
+
+/* 2. ТІНЬ ТА НАПІВПРОЗОРИЙ ФОН ДЛЯ БЛОКУ (RGBA) */
+.hero-banner {
+    /* Білий фон з прозорістю 90% (альфа-канал 0.9) */
+    background-color: rgba(255, 255, 255, 0.9); 
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 25px;
+    
+    /* Тінь для самого блоку (Box Shadow) */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15); 
+    text-align: center;
+}
+
+/* 3. ПРОЗОРІСТЬ ЗОБРАЖЕННЯ (Opacity) */
+.hero__image--transparent {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 15px;
+    
+    /* Робимо зображення напівпрозорим */
+    opacity: 0.5; 
+    
+    /* Плавний перехід для анімації */
+    transition: opacity 0.4s ease, box-shadow 0.4s ease; 
+}
+
+/* Ефект: коли наводиш мишку, картинка стає яскравою (100% непрозорою) і отримує тінь */
+.hero__image--transparent:hover {
+    opacity: 1; 
+    box-shadow: 0px 8px 15px rgba(44, 62, 80, 0.5);
+}
+
+/* Оформлення нового блоку з перевагами */
+.features-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05); /* Легка тінь */
+    margin-bottom: 25px;
+}
+
+.features-section ul {
+    list-style-type: none; /* Забираємо стандартні крапки */
+    padding-left: 0;
+}
+
+.features-section li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+/* =========================================
+   ОНОВЛЕНИЙ GRID ДЛЯ СТОРІНКИ ПОСЛУГ
+   ========================================= */
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+        "gym group"
+        "pricing pricing"
+        "quick-nav quick-nav"; /* Додали новий рядок на всю ширину */
+    gap: 20px;
+}
+
+#gym { grid-area: gym; }
+#group { grid-area: group; }
+#pricing-table { grid-area: pricing; }
+
+/* Налаштування для блоку швидкого переходу */
+#quick-nav { 
+    grid-area: quick-nav; 
+    text-align: center; /* Центруємо текст всередині */
+    background-color: #f9f9f9; /* Додамо легкий фон, щоб виділити */
+    padding: 15px;
+    border-radius: 8px;
+}
+
+#quick-nav ul {
+    list-style: none; /* Прибираємо крапки */
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Відстань між посиланнями */
+}
+
+/* =========================================
+   СТИЛІ ДЛЯ СТОРІНКИ КОНТАКТІВ
+   ========================================= */
+.contact-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центруємо блок по горизонталі */
+    text-align: center; /* Центруємо заголовки */
+}
+
+/* Налаштування самої форми, щоб вона була по центру і виглядала гарно */
+.contact-form {
+    width: 100%;
+    max-width: 500px; /* Обмежуємо ширину форми */
+    display: flex;
+    flex-direction: column;
+    text-align: left; /* Підписи до полів (label) залишаємо зліва */
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+}
+
+/* Відступи між полями вводу */
+.contact-form label {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contact-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Стилі для посилань у блоці швидкого переходу */
+#quick-nav a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#quick-nav a:hover {
+    color: white;
+    background-color: #e74c3c; /* Червоний фон при наведенні, як у вашій темі */
+}
+
+/* =========================================
+   БЛОК: FOOTER (ПІДВАЛ) - БЕМ
+   ========================================= */
+.footer {
+    background-color: #2c3e50;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.footer__text {
+    margin: 0;
+}
+
+/* =========================================
+   СТОРІНКА ПОСЛУГ (services.html) - БЕМ
+   ========================================= */
+.services {
+    padding: 10px;
+}
+
+.services__section {
+    margin-bottom: 35px;
+}
+
+.services__title {
+    color: #2c3e50;
+    border-bottom: 2px solid #e74c3c; /* Червона лінія підкреслення */
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.services__text {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+.services__list {
+    padding-left: 25px;
+}
+
+/* Модифікатор для нумерованого списку */
+.services__list--ordered {
+    list-style-type: decimal;
+}
+
+.services__item {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* --- БЛОК ТАБЛИЦІ ЦІН --- */
+.pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Легка тінь для таблиці */
+}
+
+.pricing-table__header,
+.pricing-table__cell {
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.pricing-table__header {
+    background-color: #2c3e50;
+    color: white;
+    font-weight: bold;
+}
+
+/* Зебра-стайл: чергування кольору рядків для зручності читання */
+.pricing-table__row:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.pricing-table__row:hover {
+    background-color: #f1f1f1; /* Ефект підсвічування при наведенні */
+}
+
+/* --- КАРТИНКА ПОСЛУГ --- */
+.services__image {
+    width: 100%;
+    max-width: 500px; /* Обмежуємо ширину, щоб не була на весь екран */
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* --- ШВИДКИЙ ПЕРЕХІД (БЕМ) --- */
+.quick-nav {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f4f6f9; /* Світло-сірий фон */
+    border-radius: 8px;
+    text-align: center;
+    border-top: 2px solid #ddd;
+}
+
+.quick-nav__title {
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.quick-nav__list {
+    list-style: none;
+    padding: 0;
+    display: flex; /* Розташовуємо посилання в один рядок */
+    justify-content: center;
+    gap: 20px; /* Відстань між посиланнями */
+    flex-wrap: wrap; /* Дозволяємо перенесення на мобільних */
+}
+
+.quick-nav__link {
+    text-decoration: none;
+    color: #e74c3c;
+    font-weight: bold;
+    padding: 8px 15px;
+    border: 1px solid #e74c3c;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.quick-nav__link:hover {
+    background-color: #e74c3c;
+    color: white;
+}
+
+/* =========================================
+   СТОРІНКА КОМАНДИ (team.html) - CSS GRID
+   ========================================= */
+
+/* Головний контейнер сітки */
+.team-grid {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    
+    /* Вмикаємо Grid */
+    display: grid;
+    gap: 20px; /* Відстань між блоками сітки */
+    
+    /* Створюємо дві колонки: ліва менша, права більша */
+    grid-template-columns: 1fr 3fr; 
+    
+    /* Малюємо шаблон сітки: що і де стоїть */
+    grid-template-areas: 
+        "header header"   /* Заголовок займає обидві колонки зверху */
+        "sidebar content"; /* Зліва сайдбар, справа контент */
+}
+
+/* Прив'язуємо HTML-елементи до зон нашої сітки */
+.team-grid__header {
+    grid-area: header;
+    text-align: center;
+    border-bottom: 2px solid #e74c3c;
+    padding-bottom: 10px;
+}
+
+.team-grid__sidebar {
+    grid-area: sidebar;
+    background-color: #f4f6f9;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #2c3e50;
+}
+
+.team-grid__content {
+    grid-area: content;
+    
+    /* Робимо ВНУТРІШНЮ сітку для карток тренерів */
+    display: grid;
+    /* Автоматичне підлаштування колонок: картки не вужчі за 200px */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 15px;
+}
+
+/* Стилі для самих карток */
+.trainer-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.trainer-card:hover {
+    transform: translateY(-5px); /* Картка трохи "підстрибує" при наведенні */
+    border-color: #e74c3c;
+}
+
+.trainer-card__name {
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.trainer-card__spec {
+    color: #7f8c8d;
+    font-size: 14px;
+}
+
+/* =========================================
+   АДАПТИВНІСТЬ (Мобільні пристрої)
+   Завдання 2: Різна орієнтація екрана
+   ========================================= */
+
+/* --- 1. ПОРТРЕТНА ОРІЄНТАЦІЯ (Вертикальний телефон, ширина до 768px) --- */
+@media screen and (max-width: 768px) {
+    
+    /* Навігація стає вертикальною, щоб кнопки не вилазили за екран */
+    .nav__list {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 0;
+    }
+    
+    /* Випадаюче меню на мобільних не повинно перекривати текст */
+    .nav__item--dropdown:hover .nav__dropdown {
+        position: relative; 
+        box-shadow: none;
+        background-color: #f4f6f9;
+    }
+
+    /* Головна сторінка (lab1.html) - перебудовуємо Grid в 1 колонку */
+    .main {
+        grid-template-columns: 1fr; /* Одна колонка на всю ширину */
+        grid-template-areas: 
+            "hero"
+            "promo"
+            "features"
+            "map";
+    }
+
+    /* Сторінка команди (team.html) - теж в 1 колонку */
+    .team-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "header"
+            "sidebar"
+            "content";
+    }
+
+    /* Таблиця цін: дозволяємо горизонтальну прокрутку, якщо таблиця заширока */
+    .pricing-table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    /* Трохи зменшуємо головний заголовок */
+    .header__title {
+        font-size: 24px;
+    }
+
+    /* --- Виправлення форми контактів для мобільних --- */
+    .contact-form {
+        padding: 15px; /* Зменшуємо відступи на маленькому екрані */
+        box-sizing: border-box; /* Забороняємо відступам розширювати форму за межі 100% */
+    }
+
+    .contact-form__input,
+    .contact-form__submit {
+        width: 100%; /* Поля вводу на всю доступну ширину */
+        box-sizing: border-box;
+    }
+    
+    .contact {
+        padding: 10px;
+        box-sizing: border-box;
+    }
+}
+
+/* --- 2. ЛАНДШАФТНА ОРІЄНТАЦІЯ (Горизонтальний телефон) --- */
+/* Спрацьовує, коли пристрій перевернутий (landscape) і висота екрана невелика */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    
+    /* Зменшуємо висоту карти, щоб вона не займала весь екран по висоті */
+    .map__iframe {
+        height: 250px;
+    }
+    
+    /* Обрізаємо головну картинку, щоб швидше догортати до тексту */
+    .hero__image {
+        max-height: 200px;
+        object-fit: cover; /* Зберігає пропорції, обрізаючи зайве */
+    }
+    
+    /* Зменшуємо відступи, щоб зекономити місце на вузькому екрані */
+    main {
+        margin: 10px auto;
+        padding: 15px;
+    }
+}
+
+/* =========================================
+   ЗАВДАННЯ 3: FIXED ЕЛЕМЕНТ ІЗ ДЕФОРМАЦІЄЮ
+   ========================================= */
+.fixed-promo {
+    /* Фіксоване позиціонування */
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000; /* Щоб елемент був поверх усього іншого */
+    
+    /* Зовнішній вигляд */
+    background-color: #f39c12;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    
+    /* Плавна анімація для всіх змін */
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Ефект легкого пружинення */
+}
+
+/* Деформація при наведенні мишкою */
+.fixed-promo:hover {
+    background-color: #e67e22;
+    
+    /* Збільшуємо (scale), нахиляємо (skew) і трохи повертаємо (rotate) */
+    transform: scale(1.1) skew(-10deg) rotate(5deg);
+    
+    /* Збільшуємо тінь для об'єму */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.4);
+}
+
+/* =========================================
+   ГАЛЕРЕЯ (Анімація та адаптивність)
+   ========================================= */
+
+/* Контейнер галереї */
+.gallery {
+    display: grid;
+    /* МАГІЯ АДАПТИВНОСТІ: Колонки самі підлаштовуються під ширину екрана.
+       Мінімальна ширина картинки 250px, максимальна - на весь вільний простір (1fr) */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px; /* Відстань між фотографіями */
+    margin-top: 25px;
+    padding: 10px;
+}
+
+/* Налаштування самих зображень */
+.gallery__image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; /* Картинка заповнює блок без спотворення пропорцій */
+    border-radius: 12px;
+    
+    /* Базовий стан: трохи ненасичені (сіруваті) та злегка затемнені */
+    filter: saturate(60%) brightness(90%);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+    
+    /* Плавний перехід для анімації (transform - збільшення, filter - колір) */
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                filter 0.4s ease, 
+                box-shadow 0.4s ease;
+}
+
+/* =========================================
+   АНІМАЦІЯ ПРИ НАВЕДЕННІ МИШКОЮ (HOVER)
+   ========================================= */
+.gallery__image:hover {
+    /* 1. Збільшуємо картинку на 8% */
+    transform: scale(1.08);
+    
+    /* 2. Робимо її максимально насиченою та яскравою */
+    filter: saturate(120%) brightness(105%);
+    
+    /* 3. Додаємо глибоку тінь, щоб картинка "висіла" над іншими */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+    
+    /* 4. Виводимо збільшену картинку на передній план */
+    z-index: 10;
+    position: relative;
+}
+
+/* =========================================
+   ЗАВДАННЯ 7: ГОДИННИК З CSS-АНІМАЦІЄЮ
+   ========================================= */
+.contact__clock-section {
+    margin-top: 40px;
+    text-align: center;
+    width: 100%;
+}
+
+.contact__subtitle {
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-size: 18px;
+}
+
+/* Круглий циферблат */
+.clock {
+    width: 180px;
+    height: 180px;
+    border: 8px solid #2c3e50; /* Рамка годинника */
+    border-radius: 50%; /* Робимо ідеальне коло */
+    margin: 0 auto;
+    position: relative;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1), inset 0 0 10px rgba(0,0,0,0.1);
+}
+
+.clock__face {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Центральна червона крапка, на якій "тримаються" стрілки */
+.clock__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    background-color: #e74c3c;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+/* Загальні налаштування для всіх стрілок */
+.clock__hand {
+    position: absolute;
+    bottom: 50%; /* Нижня частина стрілки стає рівно в центр годинника */
+    left: 50%;
+    /* НАЙГОЛОВНІШЕ: Зміщуємо вісь обертання в самий низ стрілки, щоб вона крутилася як треба, а не навколо своєї середини */
+    transform-origin: bottom center; 
+    border-radius: 4px;
+}
+
+/* Годинна стрілка (найтовща і найкоротша) */
+.clock__hand--hour {
+    width: 6px;
+    height: 45px;
+    background-color: #333;
+    /* Повне коло за 60 секунд */
+    animation: rotateHand 60s linear infinite;
+    z-index: 3;
+}
+
+/* Хвилинна стрілка (тонша і довша) */
+.clock__hand--minute {
+    width: 4px;
+    height: 65px;
+    background-color: #666;
+    /* Повне коло за 12 секунд */
+    animation: rotateHand 12s linear infinite;
+    z-index: 2;
+}
+
+/* Секундна стрілка (червона, тонка і найдовша) */
+.clock__hand--second {
+    width: 2px;
+    height: 75px;
+    background-color: #e74c3c;
+    /* Повне коло за 2 секунди (крутиться дуже швидко для наочності!) */
+    animation: rotateHand 2s linear infinite;
+    z-index: 1;
+}
+
+/* Сама анімація (Ключові кадри) */
+@keyframes rotateHand {
+    0% {
+        /* translateX(-50%) потрібен, щоб стрілка стояла рівно по центру відносно своєї товщини */
+        transform: translateX(-50%) rotate(0deg); 
+    }
+    100% {
+        transform: translateX(-50%) rotate(360deg);
+    }
+}

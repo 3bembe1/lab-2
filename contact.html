@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Офіційний вебсайт фітнес-центру 'Енергія'. Досягайте своїх спортивних цілей разом з нами!">
+    <meta name="keywords" content="фітнес-центр, тренажерний зал, спорт, йога, персональний тренер, кросфіт">
+    <meta name="author" content="Ніконов Костянтин">
+    <title>Контакти - Фітнес-центр "Енергія"</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1 class="header__title">Контакти</h1>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="lab1.html" class="nav__link">Головна</a></li>
+                <li class="nav__item nav__item--dropdown">
+                    <a href="services.html" class="nav__link">Послуги та ціни ▼</a>
+                    <ul class="nav__dropdown">
+                        <li class="nav__dropdown-item"><a href="services.html#pricing-table" class="nav__link">Таблиця цін</a></li>
+                        <li class="nav__dropdown-item"><a href="services.html#gym" class="nav__link">Тренажерний зал</a></li>
+                        <li class="nav__dropdown-item"><a href="services.html#group" class="nav__link">Групові заняття</a></li>
+                    </ul>
+                </li>
+                <li class="nav__item"><a href="team.html" class="nav__link">Команда</a></li>
+                <li class="nav__item"><a href="contact.html" class="nav__link">Контакти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contact">
+        <section class="contact__section">
+            <h2 class="contact__title">Записатися на пробне тренування</h2>
+            <p class="contact__text">Заповніть форму нижче, і наш менеджер зв'яжеться з вами для підтвердження часу.</p>
+
+            <form action="#" method="POST" class="contact-form">
+                
+                <label for="user-email" class="contact-form__label">Ваш Email (обов'язково):</label>
+                <input type="email" id="user-email" name="user-email" required placeholder="name@example.com" class="contact-form__input">
+
+                <label for="user-tel" class="contact-form__label">Номер телефону (обов'язково):</label>
+                <input type="tel" id="user-tel" name="user-tel" required pattern="\+380[0-9]{9}" placeholder="+380xxxxxxxxx" title="Введіть номер у форматі +380 і 9 цифр" class="contact-form__input">
+
+                <label for="user-url" class="contact-form__label">Посилання на ваш профіль (Instagram/Facebook):</label>
+                <input type="url" id="user-url" name="user-url" placeholder="https://instagram.com/yourprofile" class="contact-form__input">
+
+                <label for="workout-time" class="contact-form__label">Бажана дата та час тренування:</label>
+                <input type="datetime-local" id="workout-time" name="workout-time" required class="contact-form__input">
+
+                <button type="submit" class="contact-form__submit">Записатися</button>
+            </form>
+
+            <section class="contact__clock-section">
+                <h3 class="contact__subtitle">Час на тренуваннях летить непомітно!</h3>
+                <div class="clock">
+                    <div class="clock__face">
+                        <div class="clock__hand clock__hand--hour"></div>
+                        <div class="clock__hand clock__hand--minute"></div>
+                        <div class="clock__hand clock__hand--second"></div>
+                        <div class="clock__center"></div>
+                    </div>
+                </div>
+            </section>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Фітнес-центр «Енергія». Розроблено для лабораторної роботи №1.</p>
+    </footer>
+
+</body>
+</html>

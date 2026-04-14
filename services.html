@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Офіційний вебсайт фітнес-центру 'Енергія'. Досягайте своїх спортивних цілей разом з нами!">
+    <meta name="keywords" content="фітнес-центр, тренажерний зал, спорт, йога, персональний тренер, кросфіт">
+    <meta name="author" content="Ніконов Костянтин">
+    <title>Послуги та ціни - Фітнес-центр "Енергія"</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1 class="header__title">Послуги та ціни</h1>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="lab1.html" class="nav__link">Головна</a></li>
+                <li class="nav__item nav__item--dropdown">
+                    <a href="services.html" class="nav__link">Послуги та ціни ▼</a>
+                    <ul class="nav__dropdown">
+                        <li class="nav__dropdown-item"><a href="services.html#pricing-table" class="nav__link">Таблиця цін</a></li>
+                        <li class="nav__dropdown-item"><a href="services.html#gym" class="nav__link">Тренажерний зал</a></li>
+                        <li class="nav__dropdown-item"><a href="services.html#group" class="nav__link">Групові заняття</a></li>
+                    </ul>
+                </li>
+                <li class="nav__item"><a href="team.html" class="nav__link">Команда</a></li>
+                <li class="nav__item"><a href="contact.html" class="nav__link">Контакти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="services">
+        <section class="services__section" id="gym">
+            <h2 class="services__title">Тренажерний зал</h2>
+            <img src="gym-bg.jpg" alt="Тренажерний зал" class="services__image hero__image--transparent">
+            <p class="services__text">Сучасні тренажери для будь-яких цілей: від схуднення до набору м'язової маси. Наші інструктори завжди готові підказати правильну техніку виконання вправ.</p>
+            <ul class="services__list">
+                <li class="services__item"><b>Кардіо-зона</b> — бігові доріжки, орбітреки, велотренажери;</li>
+                <li class="services__item"><b>Зона вільних ваг</b> — гантелі від 1 до 50 кг, штанги, гирі;</li>
+                <li class="services__item"><b>Блочні тренажери</b> — для безпечного та ізольованого опрацювання м'язів.</li>
+            </ul>
+        </section>
+
+        <section class="services__section" id="group">
+            <h2 class="services__title">Групові заняття</h2>
+            <p class="services__text">Для тих, хто любить тренуватися в компанії та під енергійну музику, ми пропонуємо широкий вибір групових програм. Наші сертифіковані тренери допоможуть вам підтримувати мотивацію на найвищому рівні!</p>
+            <ol class="services__list services__list--ordered">
+                <li class="services__item"><b>Йога та Пілатес</b> — для гнучкості, розтяжки та спокою;</li>
+                <li class="services__item"><b>Кросфіт (CrossFit)</b> — інтенсивні тренування для максимальної витривалості;</li>
+                <li class="services__item"><b>Zumba</b> — танцювальне кардіо для спалювання калорій та гарного настрою;</li>
+                <li class="services__item"><b>TRX</b> — тренування з власною вагою на спеціальних петлях.</li>
+            </ol>
+        </section>
+
+        <section class="services__section services__section--pricing" id="pricing-table">
+            <h2 class="services__title">Прайс-лист на абонементи</h2>
+            <table class="pricing-table">
+                <tr class="pricing-table__row">
+                    <th class="pricing-table__header">Тип абонемента</th>
+                    <th class="pricing-table__header">Час відвідування</th>
+                    <th class="pricing-table__header">Вартість (грн/міс)</th>
+                </tr>
+                <tr class="pricing-table__row">
+                    <td class="pricing-table__cell">Ранковий</td>
+                    <td class="pricing-table__cell">07:00 - 15:00</td>
+                    <td class="pricing-table__cell">800</td>
+                </tr>
+                <tr class="pricing-table__row">
+                    <td class="pricing-table__cell">Безлімітний</td>
+                    <td class="pricing-table__cell">07:00 - 22:00</td>
+                    <td class="pricing-table__cell">1200</td>
+                </tr>
+            </table>
+        </section>
+        <nav class="quick-nav" id="quick-nav">
+            <h3 class="quick-nav__title">Швидкий перехід:</h3>
+            <ul class="quick-nav__list">
+                <li class="quick-nav__item"><a href="#gym" class="quick-nav__link">Тренажерний зал</a></li>
+                <li class="quick-nav__item"><a href="#group" class="quick-nav__link">Групові заняття</a></li>
+                <li class="quick-nav__item"><a href="#pricing-table" class="quick-nav__link">Прайс-лист</a></li>
+            </ul>
+        </nav>
+    </main>
+
+    <footer class="footer">
+        <p class="footer__text">© 2026 Фітнес-центр «Енергія». Розроблено для лабораторної роботи №2.</p>
+    </footer>
+
+</body>
+</html>
